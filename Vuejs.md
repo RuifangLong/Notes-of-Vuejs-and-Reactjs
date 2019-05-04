@@ -14,6 +14,33 @@
     * updated() 此阶段把更新后的data更新render到挂载点上
     * beforeDestroy() 卸载组件，DOM不会再变化，监听事件全部取消，不受Vue控制
     * destroyed() 同上 ==> 清除定时器，延时器，ajax请求
+* 07 实现一个复用的搜索框组件
+    <my-search></my-search> <p style="color:red">不支持驼峰命名！！！</p>
+    <template>
+        <div id="mySearch">
+
+        </div>
+    </template>
+    Vue.component('mySearch',{
+        template:'#mySearch'
+    })
+### 模块开发
+*   浏览器不支持.vue 文件和 ES6的模块化(import,export), 利用babel/webpack
+
+### Router
+* 组件Component 
+
+* SPA (Single Page Application)
+
+    * One Application(web/app), one Page
+
+* Vue-Router 允许通过不同的url访问不同的内容，实现多视图的单页web应用
+
+* 安装&&引入
+
+    
+
+
 
   * <h4>局部样式的实现原理</h4>
     * scoped , webpack 会给当前组件所有html 元素添加data-v-hash
