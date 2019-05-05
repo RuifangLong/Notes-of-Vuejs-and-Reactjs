@@ -1,4 +1,6 @@
-
+* 0505
+Life is not easy for most people.
+Vue 让我有一种错觉，这传来传去传什么哦，but I will figure it out soon
 * 05 data && computed && methods
     * data 用于 数据的初始化，the initilization of data
     * computed 有缓存功能，用于修改date的值，**写在{{}}不需要写()，虽然它也是函数
@@ -7,6 +9,7 @@
     * vm.$mount('#app'), 实例定义的时候如果没有定义挂载点，可以通过这个挂载
 * 06 生命周期函数 Life Cycle Function （HOOK)
     * beforeCreate(), data:undefined, $el:undefined ==>适合loading
+    <span style='color:red'> injection and reactivity </span>
     * created(), data: defined , $el: undefined ==>可以对data做修改
     * beforeMount(),            $el.innerHTML:{{username}} ==> 可以操纵节点
     * mounted()                 $el.innerHTML: {{Rae}}
@@ -14,6 +17,8 @@
     * updated() 此阶段把更新后的data更新render到挂载点上
     * beforeDestroy() 卸载组件，DOM不会再变化，监听事件全部取消，不受Vue控制
     * destroyed() 同上 ==> 清除定时器，延时器，ajax请求
+    * activated()
+    * deactivated()
 * 07 实现一个复用的搜索框组件
     <my-search></my-search> <p style="color:red">不支持驼峰命名！！！</p>
     <template>
@@ -37,10 +42,42 @@
 * Vue-Router 允许通过不同的url访问不同的内容，实现多视图的单页web应用
 
 * 安装&&引入
+* 编程式导航
+    * $route //当前路由信息对象
+    * $router // 获取router实例
+* 路由组件通讯
+    * params//不会显示在浏览器地址上，例外 ：动态路由(刷新页面，数据依然存在)
+    * query ？后面的
+    * props 父子传参 // Boolean|| Object || Function
+### Vuex(状态管理工具)
+* 使用步骤
+    1. 引入Vuex
+    2. 使用Vuex
+    3. 创建store
+    4. 把store注入根实例
+    5. 在组件中使用store: this.$store
+* 核心概念
+    * store (数据存储库)
+        * state( 状态：数据) // 类似于组件中的data
+        * getters // 类似于组件中的computed
+            * Fn(state)
+        * mutations // 修改状态的方法，类似于组件中的methods
+            * Fn(state,payload)
+                * state : 上面的
+                * payload: 触发fn时传入的参数
+                * 作用： 用来修改state
+            * 调用： store.commit('Fn',XXXX)
+        * actions(用于触发mutation)
+            actions - > mutations -> state
+            其实commit就可以触发state的改变，同步
+            actions 用于异步修改state状态，等待返回结果再修改state
 
+    * 方法
+        * commit('mutation',arg)
+        * dispatch('action',arg)
     
-
-
+### 给组件加上name,可以做过滤，<keep-alive include/exclude> 可以filter掉组件（所以可以取名字）
+### v-bind = {username:'Rae',age:'18'} <===> <Goods username>
 
   * <h4>局部样式的实现原理</h4>
     * scoped , webpack 会给当前组件所有html 元素添加data-v-hash

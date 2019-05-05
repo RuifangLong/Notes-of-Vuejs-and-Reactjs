@@ -150,7 +150,19 @@ Websocket
   <li>连接服务器成功后执行onopen事件，并在当前客户端显示“服务已连接信息”
       并且把自己的用户名信息发送给服务器</li></ul>
 
-
+## 0505
+* 阻止事件冒泡
+    * e.cancelBubble = true(IE8以下) && e.stoppropagation()
+    * 表单阻止提交， return false// 这是阻止默认事件哦
+* Vue directives(v-on:click=)
+    * v-on directive to listen to DOM event 
+    * event modifiers
+        * .stop
+        * .prevent
+        * .capture
+        * .self
+        * .once
+        * .passive
 
 
 
