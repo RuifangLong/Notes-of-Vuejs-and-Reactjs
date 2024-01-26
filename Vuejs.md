@@ -1,6 +1,5 @@
 * 0505
 Life is not easy for most people.
-Vue 让我有一种错觉，这传来传去传什么哦，but I will figure it out soon
 * 05 data && computed && methods
     * data 用于 数据的初始化，the initilization of data
     * computed 有缓存功能，用于修改date的值，**写在{{}}不需要写()，虽然它也是函数
